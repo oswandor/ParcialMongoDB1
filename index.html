@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Consumiendo API con fetch</title>
+</head>
+<body>
+  <h1>Lista de usuarios:</h1>
+  <ul id="usuarios"></ul>
+  <script>
+    fetch('http://localhost:5000/usuarios')
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        // manejar la respuesta de la API
+        var usuarios = data;
+        var listaUsuarios = document.getElementById('usuarios');
+        for (var i = 0; i < usuarios.length; i++) {
+          var usuario = usuarios[i];
+          var item = document.createElement('li');
+          item.appendChild(document.createTextNode(usuario.nombre + ' - ' + usuario.edad));
+          listaUsuarios.appendChild(item);
+        }
+      })
+      .catch(function (error) {
+        // manejar el error de la API
+        console.log(error);
+      });
+  </script>
+</body>
+</html>
