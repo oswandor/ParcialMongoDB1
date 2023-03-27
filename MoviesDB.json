@@ -1,0 +1,77 @@
+[{
+  "_id": {
+    "$oid": "64206226c534ca3b72b0b4c0"
+  },
+  "titulo": "The Shawshank Redemption",
+  "año": 1994,
+  "director": "Frank Darabont"
+},{
+  "_id": {
+    "$oid": "64206235c534ca3b72b0b4c1"
+  },
+  "titulo": "The Shawshank Redemption",
+  "año": 1994,
+  "director": "Frank Darabont"
+},{
+  "_id": {
+    "$oid": "6420624dc534ca3b72b0b4c2"
+  },
+  "titulo": "The Shawshank Redemption",
+  "año": 1994,
+  "director": "Frank Darabont"
+},{
+  "_id": {
+    "$oid": "64206254c534ca3b72b0b4c3"
+  },
+  "titulo": "La La Land",
+  "año": 2016,
+  "director": "Damien Chazelle"
+},{
+  "_id": {
+    "$oid": "64206261c534ca3b72b0b4c4"
+  },
+  "titulo": "The Shawshank Redemption",
+  "año": 1994,
+  "director": "Frank Darabont"
+},{
+  "_id": {
+    "$oid": "64206265c534ca3b72b0b4c5"
+  },
+  "titulo": "La La Land",
+  "año": 2016,
+  "director": "Damien Chazelle"
+},{
+  "_id": {
+    "$oid": "6420675ff4875584c548199e"
+  },
+  "titulo": "La La Land",
+  "año": 2016,
+  "director": "Damien Chazelle"
+},{
+  "_id": {
+    "$oid": "642069e93bf8ccd169f3b0da"
+  },
+  "titulo": "Jocker",
+  "año": "2012",
+  "director": "JsonBlack"
+},{
+  "_id": {
+    "$oid": "642117c4d7fd6670ab51616d"
+  },
+  "titulo": "Spiderman",
+  "año": "2016",
+  "director": "Rudy",
+  "release_date": {
+    "$date": {
+      "$numberLong": "1453507200000"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "642118dcef1904acc1c18672"
+  },
+  "titulo": "Rapido y furioso",
+  "año": 2000,
+  "director": "Cristofer",
+  "release_date": "2000-01-20 00:00:00"
+}]
