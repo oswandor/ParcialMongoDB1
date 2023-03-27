@@ -20,28 +20,28 @@ class CRUD:
 
 
     def listMovie(self)->None:
-
-        print(""" 
-              1. SHOW ALL
-              2. filter for other
-              --> """)
-        option   = input("")
-        
-        if option == "1": 
+        try: 
+            option   = input(""" 
+                1. SHOW ALL
+                2. filter for other -->  """)
             
-            # Obtener todos los documentos de la colección
-            documentos = self.collection.find()
-            # Imprimir cada documento
-            for documento in documentos:
-                print(documento)
+            if option == "1": 
+                
+                # Obtener todos los documentos de la colección
+                documentos = self.collection.find()
+                # Imprimir cada documento
+                for documento in documentos:
+                    print(documento)
 
-        elif option == "2": 
-             
-            filterJson = self.datatojson.justforKeyvalue()
-            documentos = self.collection.find(filterJson)
-            # Imprimir cada documento
-            for documento in documentos:
-             print(documento)
+            elif option == "2": 
+                
+                filterJson = self.datatojson.justforKeyvalue()
+                documentos = self.collection.find(filterJson)
+                # Imprimir cada documento
+                for documento in documentos:
+                    print(documento)
+        except Exception as e: 
+            print(e)
             
 
     #agregar peliculas             
@@ -61,9 +61,9 @@ class CRUD:
 
         try: 
 
-            idToUpdate = input("Insert the ID to Update")  
+            idToUpdate = input("Insert the ID to Update ")  
         
-            opetator = input("insertar operatos  Default [$set] > ")
+            opetator = input("insertar operatos  Default [$set] >  ")
         
             if opetator == '' : 
                 opetator = "$set"
@@ -86,14 +86,14 @@ class CRUD:
 
         try: 
             
-            deleforId =  bson.ObjectId(input("enter the id to delete")); 
+            deleforId =  bson.ObjectId(input("enter the id to delete ")); 
             # Define a filter to match the document(s) you want to delete
             filter = {"_id": deleforId} 
 
             # Delete the first document that matches the filter
             result = self.collection.delete_one(filter).deleted_count
 
-            print("id removed successfully")
+            print("id removed successfully ")
 
             return result; 
 
@@ -113,15 +113,16 @@ class CRUD:
                 
                 filter = None 
                 if typefilter == '':
+                    release_date = str(datetime.datetime(year, moth, day)) 
                     # Define a filter to match the documents you want to retrieve
-                    filter = {"release_date": {"$gt": str(datetime.datetime(year, moth, day)) }}
+                    filter = {"release_date": {"$gt": release_date }}
 
                 else : 
 
-                    release_date = datetime.datetime(year, moth, day)
-                    release_date_str = release_date.strftime('%Y-%m-%dT%H:%M:%SZ')
+                    release_date = str(datetime.datetime(year, moth, day)) 
+                   # release_date_str = release_date.strftime('%Y-%m-%dT%H:%M:%S')
 
-                    filter = {"release_date": { typefilter : release_date_str }}
+                    filter = {"release_date": { typefilter : release_date }}
 
 
                 # Find all documents that match the filter and print them

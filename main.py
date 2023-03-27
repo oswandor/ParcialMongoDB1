@@ -44,11 +44,19 @@ class AppMenu:
 
 
 if __name__ == '__main__':
-    #instanciamos la clase  
-    appmenu = AppMenu(); 
-    appmenu.showOptionsMenu() 
-    # pedimos una opcion 
-    option = str(input("choose Option "));  
-    appmenu.chooseOption(option);   
+    flag = True 
+    while flag: 
+         
+        #instanciamos la clase  
+        appmenu = AppMenu(); 
+        appmenu.showOptionsMenu() 
+        # pedimos una opcion 
+        option = str(input("choose Option "));  
+        appmenu.chooseOption(option);
+
+        exitsk = input("Quieres seguir S/N ")
+        if exitsk == "S": 
+            flag = False
+            
 
 

@@ -10,8 +10,8 @@ class DatatoJson():
 
         try : 
             #pedimos los datos  para ingresar     
-            titleMovie =  input("enter title of movie"); 
-            ageMovie   =  input("enter age of movie"); 
+            titleMovie =  input("enter title of movie "); 
+            ageMovie   =  int(input("enter age of movie ")); 
             direct = input("enter director of movie ");
             year = int(input("insert year: "))
             moth = int(input("insert moth: "))
@@ -24,7 +24,7 @@ class DatatoJson():
                 "titulo" : titleMovie , 
                 "año"    : ageMovie , 
                 "director" : direct , 
-               "release_date": datetime.datetime(year, moth, day)
+               "release_date": str(datetime.datetime(year, moth, day)) 
             } 
             #retornamos el diccionario 
             return queryJson ;    
@@ -72,8 +72,8 @@ class DatatoJson():
             # dependiendo de la opcion  asi devolver el objeto dic 
             if option == "1": 
             
-                keyupdate = input("enter value key");
-                valuetoudpate = input("enter value");  
+                keyupdate = input("enter value key ");
+                valuetoudpate = input("enter value ");  
 
                 return { keyupdate : valuetoudpate } 
             
@@ -90,8 +90,8 @@ class DatatoJson():
         try: 
         
                 
-            keyupdate = input("enter value key");
-            valuetoudpate = input("enter value");  
+            keyupdate = input("enter value key: ");
+            valuetoudpate = input("enter value: ");  
             filterJson = { keyupdate : valuetoudpate } 
             return  filterJson 
 
